@@ -68,13 +68,17 @@ $user_id = $_SESSION['user_id'] ?? 0;
             <?php
             // Fetch upcoming event (future start date)
             $upcomingSQL = "SELECT * FROM event_bookings 
-                        WHERE user_id = $1 
+                        WHERE user_id = ? 
                         AND start_date >= CURDATE() 
                         ORDER BY start_date ASC
                         LIMIT 1";
 
-            $upcomingStmt = pg_query_params($conn, $upcomingSQL, array($user_id));
-            $upcoming = ($upcomingStmt) ? pg_fetch_assoc($upcomingStmt) : false;
+            $upcomingStmt = $conn->prepare($upcomingSQL);
+            $upcomingStmt->bind_param("i", $user_id);
+            $upcomingStmt->execute();
+            $upcomingResult = $upcomingStmt->get_result();
+            $upcoming = ($upcomingResult && $upcomingResult->num_rows > 0) ? $upcomingResult->fetch_assoc() : false;
+            $upcomingStmt->close();
 
             if ($upcoming):
                 ?>
@@ -125,13 +129,16 @@ $user_id = $_SESSION['user_id'] ?? 0;
         <?php
         // Fetch all bookings history
         $historySQL = "SELECT * FROM event_bookings 
-                  WHERE user_id = $1 
+                  WHERE user_id = ? 
                   ORDER BY booking_date DESC";
 
-        $historyStmt = pg_query_params($conn, $historySQL, array($user_id));
+        $historyStmt = $conn->prepare($historySQL);
+        $historyStmt->bind_param("i", $user_id);
+        $historyStmt->execute();
+        $historyResult = $historyStmt->get_result();
 
-        if ($historyStmt && pg_num_rows($historyStmt) > 0):
-            while ($row = pg_fetch_assoc($historyStmt)):
+        if ($historyResult && $historyResult->num_rows > 0):
+            while ($row = $historyResult->fetch_assoc()):
                 // Determine status based on dates
                 $today = date('Y-m-d');
                 $status = '';
@@ -247,10 +254,9 @@ $user_id = $_SESSION['user_id'] ?? 0;
         endif;
 
         // Close database connection
-        pg_free_result($upcomingStmt);
-        if ($historyStmt)
-            pg_free_result($historyStmt);
-        pg_close($conn);
+        // Close database connection
+        $historyStmt->close();
+        $conn->close();
         ?>
 
     </div>

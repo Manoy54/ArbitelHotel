@@ -20,12 +20,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($username) || empty($password)) {
         $error = "Username and password are required";
     } else {
-        // Check credentials using pg_query_params
-        $query = "SELECT user_id, username, password FROM users WHERE username = $1";
-        $result = pg_query_params($conn, $query, array($username));
+        // Check credentials using MySQLi prepared statement
+        $query = "SELECT user_id, username, password FROM users WHERE username = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        if ($result && pg_num_rows($result) === 1) {
-            $user = pg_fetch_assoc($result);
+        if ($result && $result->num_rows === 1) {
+            $user = $result->fetch_assoc();
 
             // Verify password (assuming password is hashed)
             if (password_verify($password, $user['password'])) {
@@ -61,11 +64,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $error = "Invalid username or password";
         }
-        pg_free_result($result);
+        $result->free();
+        $stmt->close();
     }
 }
 
-pg_close($conn);
+$conn->close();
 ?>
 
 

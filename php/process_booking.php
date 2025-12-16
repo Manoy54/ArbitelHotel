@@ -22,11 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $reservationDate = date('Y-m-d'); // Current date
 
     // Insert booking into database
+    // Insert booking into database
     $query = "INSERT INTO reservations (customer_name, email, room_id, check_in_date, check_out_date, 
               total_price, special_instructions, reservation_date, status) 
-              VALUES ($1, $2, $3, $4, $5, $6, $7, $8, 'confirmed') RETURNING id";
+              VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'confirmed')";
 
-    $params = array(
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param(
+        "ssissdss",
         $customerName,
         $email,
         $roomId,
@@ -37,23 +40,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $reservationDate
     );
 
-    $result = pg_query_params($conn, $query, $params);
-
-    if ($result) {
+    if ($stmt->execute()) {
         // Get the reservation ID
-        // Get the reservation ID
-        $row = pg_fetch_assoc($result);
-        $reservationId = $row['id'];
+        $reservationId = $conn->insert_id;
+        $stmt->close();
 
+        // Get room details
+        // Get room details
         // Get room details
         // Get room details
         $roomQuery = "SELECT r.name as room_name, c.name as room_category 
                      FROM rooms r 
                      JOIN room_categoris c ON r.category_id = c.id 
-                     WHERE r.id = $1";
+                     WHERE r.id = ?";
 
-        $roomResult = pg_query_params($conn, $roomQuery, array($roomId));
-        $roomData = pg_fetch_assoc($roomResult);
+        $roomStmt = $conn->prepare($roomQuery);
+        $roomStmt->bind_param("i", $roomId);
+        $roomStmt->execute();
+        $roomResult = $roomStmt->get_result();
+        $roomData = $roomResult->fetch_assoc();
+        $roomStmt->close();
 
         // Store all email data in session for JavaScript to access
         $_SESSION['booking_email_data'] = [
@@ -74,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     } else {
         // Handle error
-        echo "Booking failed: " . pg_last_error($conn);
+        echo "Booking failed: " . $conn->error;
     }
 }
 ?>

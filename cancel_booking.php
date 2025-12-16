@@ -30,35 +30,40 @@ $user_id = $_SESSION['user_id'];
 require 'db_connect.php';
 
 // First, verify that the booking belongs to the current user (security check)
-$verifySQL = "SELECT booking_id FROM event_bookings WHERE booking_id = $1 AND user_id = $2";
-$verifyResult = pg_query_params($conn, $verifySQL, array($booking_id, $user_id));
+$verifySQL = "SELECT booking_id FROM event_bookings WHERE booking_id = ? AND user_id = ?";
+$stmt = $conn->prepare($verifySQL);
+$stmt->bind_param("ii", $booking_id, $user_id);
+$stmt->execute();
+$verifyResult = $stmt->get_result();
 
 if (!$verifyResult) {
-    sendResponse(false, 'Query failed: ' . pg_last_error($conn));
+    sendResponse(false, 'Query failed: ' . $conn->error);
 }
 
-if (pg_num_rows($verifyResult) === 0) {
+if ($verifyResult->num_rows === 0) {
     // Either booking doesn't exist or doesn't belong to this user
     sendResponse(false, 'You do not have permission to cancel this booking or it does not exist');
 }
 
-pg_free_result($verifyResult);
+$stmt->close();
 
 // If we're here, the booking exists and belongs to the current user, so delete it
-$deleteSQL = "DELETE FROM event_bookings WHERE booking_id = $1 AND user_id = $2";
-$result = pg_query_params($conn, $deleteSQL, array($booking_id, $user_id));
+// If we're here, the booking exists and belongs to the current user, so delete it
+$deleteSQL = "DELETE FROM event_bookings WHERE booking_id = ? AND user_id = ?";
+$stmt = $conn->prepare($deleteSQL);
+$stmt->bind_param("ii", $booking_id, $user_id);
 
-if ($result) {
+if ($stmt->execute()) {
     // Check if any rows were affected
-    if (pg_affected_rows($result) > 0) {
+    if ($stmt->affected_rows > 0) {
         sendResponse(true, 'Booking successfully cancelled');
     } else {
         sendResponse(false, 'No booking was deleted. It may have been already cancelled.');
     }
 } else {
-    sendResponse(false, 'Error deleting booking: ' . pg_last_error($conn));
+    sendResponse(false, 'Error deleting booking: ' . $conn->error);
 }
 
-pg_free_result($result);
-pg_close($conn);
+$stmt->close();
+$conn->close();
 ?>

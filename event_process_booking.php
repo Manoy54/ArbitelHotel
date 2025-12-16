@@ -82,10 +82,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 special_instructions, base_venue_price, num_days, 
                 catering_charge, service_charge, vat, total_charge
             ) VALUES (
-                $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21
-            ) RETURNING booking_id";
+                ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+            )";
 
-        $params = array(
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param(
+            "isssissssssssissssss",
             $user_id,
             $venue_name,
             $start_date,
@@ -109,12 +111,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $total_charge
         );
 
-        $stmt = pg_query_params($conn, $sql, $params);
-
         // Execute the statement
-        if ($stmt) {
-            $row = pg_fetch_assoc($stmt);
-            $booking_id = $row['booking_id'];
+        if ($stmt->execute()) {
+            $booking_id = $conn->insert_id;
             header('Content-Type: application/json');
             echo json_encode([
                 'success' => true,
@@ -122,11 +121,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'booking_id' => $booking_id
             ]);
         } else {
-            throw new Exception("Error executing query: " . pg_last_error($conn));
+            throw new Exception("Error executing query: " . $conn->error);
         }
 
-        pg_free_result($stmt);
-        pg_close($conn);
+        $stmt->close();
+        $conn->close();
 
     } catch (Exception $e) {
         header('Content-Type: application/json');

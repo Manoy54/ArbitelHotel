@@ -17,29 +17,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check username
     if (empty($error)) {
-        $stmt = pg_query_params($conn, "SELECT user_id FROM users WHERE username = $1", array($username));
-        if ($stmt && pg_num_rows($stmt) > 0) {
+        $stmt = $conn->prepare("SELECT user_id FROM users WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result && $result->num_rows > 0) {
             $error = "Username already exists";
         }
-        pg_free_result($stmt);
+        $stmt->close();
     }
 
     // Check email
     if (empty($error)) {
-        $stmt = pg_query_params($conn, "SELECT user_id FROM users WHERE email = $1", array($email));
-        if ($stmt && pg_num_rows($stmt) > 0) {
+        $stmt = $conn->prepare("SELECT user_id FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result && $result->num_rows > 0) {
             $error = "Email already exists";
         }
-        pg_free_result($stmt);
+        $stmt->close();
     }
 
     // Check phone
     if (empty($error)) {
-        $stmt = pg_query_params($conn, "SELECT user_id FROM users WHERE phone = $1", array($phone));
-        if ($stmt && pg_num_rows($stmt) > 0) {
+        $stmt = $conn->prepare("SELECT user_id FROM users WHERE phone = ?");
+        $stmt->bind_param("s", $phone);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result && $result->num_rows > 0) {
             $error = "Phone number already exists";
         }
-        pg_free_result($stmt);
+        $stmt->close();
     }
 
     // Insert user if no errors
@@ -47,10 +56,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $created_at = date('Y-m-d H:i:s');
 
-        $query = "INSERT INTO users (username, email, phone, password, created_at) VALUES ($1, $2, $3, $4, $5)";
-        $stmt = pg_query_params($conn, $query, array($username, $email, $phone, $hashed_password, $created_at));
+        $query = "INSERT INTO users (username, email, phone, password, created_at) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("sssss", $username, $email, $phone, $hashed_password, $created_at);
 
-        if ($stmt) {
+        if ($stmt->execute()) {
             $_SESSION['success_message'] = "Account created successfully! Please login.";
             header("Location: login.php");
             exit();
@@ -58,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $error = "Registration failed. Please try again.";
         }
 
-        pg_free_result($stmt);
+        $stmt->close();
     }
 }
 ?>
