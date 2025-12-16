@@ -1,0 +1,958 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* TOP LINKS START */
+
+.top-links {
+    display: flex;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    justify-content: center;
+    align-items: center;
+    align-content:center;
+    height: 3rem;
+    gap:23rem;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+.item1{
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+}
+.item2{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+}
+.links {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    align-items: center;
+
+}
+.links i {
+    color: #DFA974;
+    font-size: 20px;
+}
+.links p {
+    font-size: 17px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    margin: 0;
+}
+#standing-hr {
+    width: 25px;
+    height: 2px;
+    background-color: #ced4da;
+    transform: rotate(90deg);
+}
+.right-elements {
+    display: flex;
+    align-items: center;
+    gap:1rem;
+}
+.social-media-icons {
+    justify-self: center;
+    align-self: center;
+    align-content: center;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding-right: 2rem;
+}
+.social-media-icons i:hover {
+    color: #DFA974;
+    transition: all 0.6s;
+}
+.social-media-icons i {
+    color: black;
+    font-size: 20px;
+}
+.account-display {
+    display: flex;
+    align-items: center;
+    padding-right: 2rem;
+}
+.account-display p {
+    font-size: 17px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    margin: 0;
+}
+
+.booking-now {
+    width: 18rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border: 2px solid #DFA974;
+    position: relative;
+    cursor: pointer;
+}
+
+.booking-now i {
+    font-size: 20px;
+}
+
+.booking-now p {
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    margin: 0;
+    color: black;
+}
+
+/* Drop Down Menu */
+
+.signup-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    text-align: center;
+}
+
+.signup-prompt p {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.signup-link {
+    color: #f18736;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.signup-link:hover {
+    color: #d06718;
+    text-decoration: underline;
+}
+
+.booking-now {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+}
+
+.booking-now i {
+    font-size: 18px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    width: 180px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 1000;
+    padding: 0;
+    border: 1px solid #e8e8e8;
+}
+
+.welcome-text {
+    padding: 10px 15px 5px;
+    color: #f18736;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.user-name {
+    padding: 5px 15px 10px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #333;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #f0f0f0;
+}
+
+.menu-items a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s;
+    font-size: 14px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.menu-items a:hover {
+    background-color: #f9f9f9;
+}
+
+.sign-out {
+    color: #f18736 !important;
+}
+
+/* End of Drop Down*/
+
+
+@media (max-width: 1200px) {
+
+    .top-links {
+        gap:10rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+@media (max-width: 1200px) {
+
+    .top-links {
+
+        flex-wrap: nowrap;
+    }
+}
+@media (max-width: 1100px) {
+
+    .top-links {
+        height: auto;
+    }
+    .booking-now{
+        width: 15rem;
+    }
+}
+@media (max-width: 850px) {
+
+    .top-links {
+
+        height: auto;
+        gap:4rem;
+        padding-left: 5rem;
+        padding-right: 4rem;
+    }
+    .links{
+        flex-direction: column;
+    }
+    .right-elements{
+        flex-direction: column;
+    }
+    .booking-now{
+        position: relative;
+        top:0.2rem;
+        width: 15rem;
+        max-width: 17rem;
+        padding-left:9px;
+        padding-right:9px;
+    }
+    #standing-hr{
+        width: 7rem;
+        transform: rotate(180deg);
+    }
+
+}
+
+/*  Nav Bar  */
+
+.navbar{
+    box-shadow: 0 4px 25px -1px rgba(0, 0, 0, 0.04), 0 2px 15px -1px rgba(0, 0, 0, 0.02);
+}
+.navbar h3{
+    position:relative;
+    left:16.5rem;
+    font-family: 'Sona', 'Garamond Premier Pro', 'EB Garamond', 'Garamond', 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 2.2rem;
+}
+.navbar-links{
+    display: flex;
+    gap:3rem;
+}
+.nav-links {
+    position:relative;
+    right:16rem;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    padding-bottom: 3px;
+}
+.nav-links::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color:#DFA974;
+    bottom: 0;
+    left: 0;
+    transition: width 0.1s ;
+    pointer-events: none;
+}
+.nav-links:hover::after {
+    width: 100%;
+}
+
+#home::after {
+    width: 100%;
+    transition: none;
+}
+
+
+/* TOP LINKS & NAVBAR END */
+
+
+
+/* ABOUT HEAD START */
+
+.about-head{
+    margin-top:50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 5rem;
+}
+#about-us-header{
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3.2rem;
+}
+#about-us-sub{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color:black;
+}
+
+
+#booking-h2{
+    position: relative;
+    text-align: center;
+    align-self: center;
+    font-family: Poppins, sans-serif;
+    font-weight: 300;
+    font-size:2rem;
+}
+
+.booking-warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+    height: auto;
+    position: relative;
+    padding-top:1rem;
+    background-color: #ced4da;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color:white;
+    margin:0;
+}
+
+.booking-warning i {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    bottom: 8px;
+}
+
+
+
+/* BOOKING FORM START PROPER */
+
+
+.booking-forms{
+    display: flex;
+    width:100vw;
+    height:auto;
+    padding:2rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+/* Summary Form */
+
+
+.event-form-container {
+    width: 76rem;
+    height: 50rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.logo-box {
+    display: flex;
+    height: 50rem;
+    flex-direction: column;
+}
+
+.book-summary {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    padding: 2rem;
+    gap: 1rem;
+    background-color: whitesmoke;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #5a3921;
+}
+
+/* Fix for the venue section */
+.summary-label {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.summary-main-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.summary-value {
+    font-weight: 500;
+    font-size: 1.5rem;
+    font-family: "Libre Caslon Display", serif;
+    color:#DFA974;
+}
+
+.summary-price {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: right;
+}
+
+.charge {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 6px;
+    margin: 0.5rem 0 1rem;
+}
+
+.charge-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+.catering{
+    color:#7f5539;
+    font-weight: 400;
+    font-family: "Roboto Flex", sans-serif;
+}
+
+.charge-header span {
+    display: inline-block;
+}
+
+.charge-item {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 100;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.charge-label {
+
+    font-size: 1rem;
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 200;
+}
+
+.charge-value {
+    font-size: 1rem;
+    text-align: right;
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 200;
+    min-width: 100px; /* Ensures consistent alignment */
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid rgba(90, 57, 33, 0.3);
+}
+
+.total-label, .total-value {
+    font-size: 1.2rem;
+    color: #5a3921;
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 500;
+}
+
+.total-value {
+    text-align: right;
+    min-width: 100px; /* Consistent with charge-value */
+}
+
+
+
+
+
+
+
+/* END  Summary Form */
+
+
+
+.logo-name{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding:1rem;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------------- */
+
+.event-form-grid {
+    display: grid;
+    gap: 17px;
+    grid-template-columns: 24rem 24rem;
+    grid-template-rows: repeat(11, 2.5rem);
+    grid-template-areas:
+        "box1 box2"
+        "box3 box4"
+        "box5 box6"
+        "box7 box8"
+        "box9 box10"
+        "box11 box11"
+        "box12 box12"
+        "box13 box13"
+        "box14 box14 ";
+}
+
+.event-form-box {
+    border: 1px solid #ced4da;
+    padding: 5px 5px 5px 12px; /* Add left padding */
+    font-family: sans-serif;
+    font-size: 1rem;
+    align-content: center;
+    align-items: center;
+}
+
+/* Date input styles */
+.date-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.date-label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+/* Adjust the input height in date wrappers */
+.date-input-wrapper .event-form-box {
+    height: 1.6rem;
+    box-sizing: border-box;
+}
+
+/* Styles for the time container */
+.time-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 2.5rem;
+    box-sizing: border-box;
+}
+
+.time-input-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.time-label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.time-input {
+    height: 1.6rem;
+    padding: 2px 5px 2px 12px;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+}
+
+.event-form-box p {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+/* Radio buttons layout */
+#event-form-box11 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 12px;
+    border: none;
+}
+
+/* Textarea field under "Special Instructions" */
+#event-form-box12{
+    border: none;
+   background-color: whitesmoke;
+}
+#event-form-box13 {
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+.event-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Updated placeholder styles */
+.event-form-box::placeholder {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 0.7rem; /* Reduced from 0.8rem to 0.7rem */
+}
+
+/* Browser-specific placeholder styles */
+.event-form-box::-webkit-input-placeholder { /* Chrome, Safari, Opera */
+    font-size: 0.7rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+.event-form-box::-moz-placeholder { /* Firefox */
+    font-size: 0.7rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    opacity: 1; /* Firefox sometimes needs this */
+}
+
+.event-form-box:-ms-input-placeholder { /* IE 10+ */
+    font-size: 0.7rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+.event-form-box:-moz-placeholder { /* Firefox 18- */
+    font-size: 0.7rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+.event-form-box label {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    margin: 0;
+}
+
+
+
+#event-form-box14 {
+    width: 10rem;
+    height: 2rem;
+    justify-self: start; /* Aligns button to the start (left) of its grid cell */
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    border: none;
+    background-color: #9d6b53;
+    color: white;
+    cursor: pointer;
+}
+
+#event-form-box14:hover {
+    background-color: #7f5539;
+    transition: all 0.5s;
+}
+
+
+
+
+
+
+
+/* BOOKING FORM START END */
+
+
+/*  ---- Footer Start  -----  */
+
+.footer{
+    display:flex;
+    width:100%;
+    height:26rem;
+    flex-direction: column;
+}
+.footer-texts{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: grid;
+    width:100vw;
+    height:75%;
+    background-color:#151d2f;
+    grid-template-columns:auto;
+    grid-template-rows:auto;
+    grid-template-areas:
+    "ftbox1 ftbox2 ftbox3";
+    padding:2rem;
+    gap:7rem;
+}
+.footer-text-box{
+    width:auto;
+    display: flex;
+    flex-direction: column;
+    padding-left:3rem;
+    padding-right:3rem;
+}
+#footer-h2{
+    font-family: 'Sona', 'Garamond Premier Pro', 'EB Garamond', 'Garamond', 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    font-size: 3rem;
+}
+
+#ftb1{
+    width:auto;
+    height:auto;
+    color:#acb0bd;
+
+}
+#ftb2{
+    width:auto;
+    height:auto;
+    color:#acb0bd;
+}
+#ftb3{
+    width:auto;
+    height:auto;
+    color:#acb0bd;
+}
+.footer-icons{
+    display: flex;
+    gap:1rem;
+}
+.footer-icon-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width:auto;
+    height:auto;
+    border-radius: 50%;
+    border: 1px solid #495057;
+    padding:14px;
+}
+.footer-icon-circle i{
+    color:white;
+    font-size:12px;
+}
+.footer-icon-circle:hover{
+    background-color:#DFA974;
+    transition: all 0.4s;
+}
+.lower-footer{
+    width:100vw;
+    height:25%;
+    display:flex;
+    color:#acb0bd;
+    justify-content: center;
+    align-items: center;
+    background-color:#051923  ;
+}
+#contact-us{
+    color:#DFA974;
+    font-weight: 450;
+    letter-spacing: 2px;
+    font-size:1rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+@media (max-width: 50rem) {
+    .news-section{
+    }
+}
+@media screen and (max-width: 1200px) {
+    .footer-texts{
+        gap:3rem;
+    }
+}
+@media screen and (max-width:50rem) {
+    .footer{
+        height:auto;
+    }
+    .footer-texts{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .lower-footer{
+        height:auto;
+        padding:2rem;
+    }
+    .footer-text-box{
+        width:auto;
+        height: auto;
+    }
+}
+
+/*  ---- Footer End -----  */
+
+
+
+/* Basic styles for the modal */
+
+
+
+.booking-confirmation-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Ensure it sits on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Slightly darker overlay */
+}
+
+.confirmation-content {
+    background-color: #ffffff;
+    margin: 10% auto; /* Centered vertically a bit higher */
+    padding: 30px 40px;
+    width: 400px; /* Fixed width instead of percentage */
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.confirmation-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #e8f5e9; /* Light green background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.confirmation-icon i {
+    color: #4CAF50;
+    font-size: 36px;
+}
+
+.confirmation-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.confirmation-content p {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.close-modal-btn {
+    background-color: #e0b981; /* Beige/gold color matching the image */
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.close-modal-btn:hover {
+    background-color: #d3a96c;
+}
+

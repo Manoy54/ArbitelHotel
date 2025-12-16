@@ -1,0 +1,1146 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* TOP LINKS START */
+
+.top-links {
+    display: flex;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    justify-content: center;
+    align-items: center;
+    align-content:center;
+    height: 3rem;
+    gap:23rem;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+.item1{
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+}
+.item2{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+}
+.links {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    align-items: center;
+
+}
+.links i {
+    color: #DFA974;
+    font-size: 20px;
+}
+.links p {
+    font-size: 17px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    margin: 0;
+}
+#standing-hr {
+    width: 25px;
+    height: 2px;
+    background-color: #ced4da;
+    transform: rotate(90deg);
+}
+.right-elements {
+    display: flex;
+    align-items: center;
+    gap:1rem;
+}
+.social-media-icons {
+    justify-self: center;
+    align-self: center;
+    align-content: center;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding-right: 2rem;
+}
+.social-media-icons i:hover {
+    color: #DFA974;
+    transition: all 0.6s;
+}
+.social-media-icons i {
+    color: black;
+    font-size: 20px;
+}
+.account-display {
+    display: flex;
+    align-items: center;
+    padding-right: 2rem;
+}
+.account-display p {
+    font-size: 17px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    margin: 0;
+}
+
+.booking-now {
+    width: 18rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    border:2px solid #DFA974;
+}
+.booking-now i {
+    font-size: 20px;
+
+}
+
+.booking-now p {
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    margin: 0;
+    color:black;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    display: none;
+    z-index: 1000;
+    margin-top: 5px;
+}
+
+.dropdown-header {
+    padding: 15px;
+    border-bottom: 1px solid #f5f5f5;
+    background-color: #f9f9f9;
+}
+
+.dropdown-header p {
+    color: #896a39;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.dropdown-header h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: #333;
+}
+
+.dropdown-content {
+    padding: 10px 0;
+}
+
+.dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.dropdown-link {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.dropdown-link:hover {
+    background-color: #f5f5f5;
+}
+
+.sign-out {
+    border-top: 1px solid #f0f0f0;
+    margin-top: 5px;
+    color: #d9534f;
+}
+
+/* Show dropdown when active */
+.dropdown-active .dropdown-menu {
+    display: block;
+}
+
+
+@media (max-width: 1200px) {
+
+    .top-links {
+        gap:10rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+@media (max-width: 1200px) {
+
+    .top-links {
+
+        flex-wrap: nowrap;
+    }
+}
+@media (max-width: 1100px) {
+
+    .top-links {
+        height: auto;
+    }
+    .booking-now{
+        width: 10rem;
+    }
+}
+@media (max-width: 850px) {
+
+    .top-links {
+
+        height: auto;
+        gap:4rem;
+        padding-left: 5rem;
+        padding-right: 4rem;
+    }
+    .links{
+        flex-direction: column;
+    }
+    .right-elements{
+        flex-direction: column;
+    }
+    .booking-now{
+        position: relative;
+        top:0.2rem;
+        width: 15rem;
+        max-width: 17rem;
+        padding-left:9px;
+        padding-right:9px;
+    }
+    #standing-hr{
+        width: 7rem;
+        transform: rotate(180deg);
+    }
+
+}
+
+
+
+/*  Nav Bar  */
+.navbar{
+    box-shadow: 0 4px 25px -1px rgba(0, 0, 0, 0.04), 0 2px 15px -1px rgba(0, 0, 0, 0.02);
+}
+.navbar h3{
+    position:relative;
+    left:16.5rem;
+    font-family: 'Sona', 'Garamond Premier Pro', 'EB Garamond', 'Garamond', 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 2.2rem;
+
+}
+.navbar-links{
+    display: flex;
+    gap:3rem;
+
+}
+.nav-links {
+    position:relative;
+    right:16rem;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    padding-bottom: 3px;
+}
+.nav-links::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color:#DFA974;
+    bottom: 0;
+    left: 0;
+    transition: width 0.1s ;
+    pointer-events: none;
+}
+.nav-links:hover::after {
+    width: 100%;
+}
+#home::after {
+    width: 100%;
+    transition: none;
+}
+
+
+@media (max-width: 1200px) {
+    .navbar h3 {
+        left: 5rem;
+    }
+    .nav-links {
+        right: 10rem;
+    }
+    .divider {
+        width: 90vw;
+    }
+}
+@media (max-width: 992px) {
+
+    .social-media-icons {
+        left: 0;
+        order: 2;
+        margin: 10px 0;
+    }
+
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .navbar h3 {
+        left: 0;
+        margin-bottom: 15px;
+    }
+
+    .navbar-links {
+        gap: 2rem;
+    }
+
+    .nav-links {
+        right: 0;
+        font-size: 20px;
+    }
+
+    .carousel-testimonial-images {
+        height: auto;
+        min-height: 600px;
+    }
+
+    .text-section h1 {
+        font-size: 50px;
+    }
+
+    .divider {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 0;
+    }
+
+    .two-images {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .mini-about-us {
+        height: auto;
+        padding: 30px 0;
+    }
+}
+
+/* Small Devices (Landscape Phones, less than 768px) */
+@media (max-width: 768px) {
+    .navbar-links {
+        gap: 1.5rem;
+    }
+
+    .nav-links {
+        font-size: 18px;
+    }
+
+    .text-section h1 {
+        font-size: 40px;
+    }
+
+    .text-section p br {
+        display: none;
+    }
+
+    .divider-texts h3 {
+        font-size: 2.5rem;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+    .social-media-icons {
+        gap: 1rem;
+    }
+    .navbar h3 {
+        font-size: 2.5rem;
+    }
+
+    .navbar-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-links {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+}
+@media (max-width: 400px) {
+
+    #standing-hr {
+        display: none;
+    }
+    .social-media-icons {
+        gap: 0.8rem;
+    }
+    .social-media-icons i {
+        font-size: 18px;
+    }
+    .navbar h3 {
+        font-size: 2rem;
+    }
+    .nav-links {
+        font-size: 15px;
+        margin: 3px;
+    }
+    .text-section h1 {
+        font-size: 28px;
+    }
+    .divider-texts h6 {
+        font-size: 0.8rem;
+    }
+
+    .divider-texts h3 {
+        font-size: 1.8rem;
+    }
+
+    .divider-texts p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    display: none;
+    z-index: 1000;
+    margin-top: 5px;
+}
+
+.dropdown-header {
+    padding: 15px;
+    border-bottom: 1px solid #f5f5f5;
+    background-color: #f9f9f9;
+}
+
+.dropdown-header p {
+    color: #896a39;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.dropdown-header h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: #333;
+}
+
+.dropdown-content {
+    padding: 10px 0;
+}
+
+.dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.dropdown-link {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.dropdown-link:hover {
+    background-color: #f5f5f5;
+}
+
+.sign-out {
+    border-top: 1px solid #f0f0f0;
+    margin-top: 5px;
+    color: #d9534f;
+}
+
+/* Show dropdown when active */
+.dropdown-active .dropdown-menu {
+    display: block;
+}
+
+
+
+
+/* Page Header EVENTS */
+.about-head{
+    margin-top:50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 5rem;
+}
+#about-us-header{
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3.2rem;
+}
+#about-us-sub{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color:black;
+}
+
+
+/* END OF EVENTS HEAD  */
+
+
+
+/* MAIN IMAGE START   */
+
+.main-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height:auto;
+    padding:1rem;
+    flex-direction: column;
+    margin:0;
+    /* Add this line to create a container context for absolute positioning */
+    position: relative;
+    /* Add this line to control the total height of the section */
+    margin-bottom: -22rem; /* Adjust this value to control the gap */
+}
+
+
+.middle-image{
+    display: flex;
+    width: 80vw;
+    height:90vh;
+
+}
+#middle-image-box{
+    background-image: url("/img/beachside.jpg");
+    background-position: center;
+    background-size: cover;
+    box-shadow:
+            0 -10px 20px -5px rgba(0, 0, 0, 0.1),  /* top */
+            -10px 0 20px -5px rgba(0, 0, 0, 0.1),  /* left */
+            10px 0 20px -5px rgba(0, 0, 0, 0.1);   /* right */
+}
+
+.events-info-grid{
+    position: relative; /* or you could use 'absolute' */
+    margin:0;
+    bottom:17rem; /* This is what creates the overlap effect */
+    display: grid;
+    grid-template-columns:repeat(4, 16rem);
+    grid-template-rows: repeat(2,17rem);
+    grid-template-areas:
+    "box1 box1 box2 box2"
+     "box3 box4 box5 box6";
+}
+
+.even-info-box{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-left:2rem;
+    padding-right:2rem;
+    margin:0;
+
+}
+
+#box1{
+    border-top: 1px  solid #ced4da;
+    border-left: 1px  solid #ced4da;
+    border-right: 1px  solid #ced4da;
+    border-bottom: none;
+}
+#box2{
+    border: none;
+    background-color: transparent;
+}
+#box3{
+    border-right: none;
+}
+#box4{
+    border-right: none;
+}
+#box5{
+    border-right: none;
+}
+
+.even-info-box{
+    border: 1px solid #ced4da;
+    background-color: white;
+    gap:10px;
+}
+
+.icon-holder{
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    width:3.5rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #582f0e;
+}
+
+#events-header{
+    font-family: "Roboto", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+#first-box-header{
+    color:#DFA974;
+    font-size: 2rem;
+    font-family: 'Sona', 'Garamond Premier Pro', 'EB Garamond', 'Garamond', 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+
+}
+.even-info-box i{
+    color:white;
+    font-size: 1.6rem;
+    font-weight: 520;
+}
+
+.box-header{
+    font-family: "Montserrat", sans-serif;
+    font-size:1rem;
+    font-weight: 500;
+    color:#DFA974;
+}
+
+.box-p{
+    font-size:12px;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+/* END MAIN IMAGE  */
+
+
+/* START MAIN IMAGE 2   */
+
+.main-image2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height:auto;
+    width: 100vw;
+    border-top: 1px solid #ced4da;
+    padding: 9rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-rows: repeat(2, 32rem);
+    grid-template-columns: repeat(2, 43rem);
+    grid-template-areas:
+        "info-box1 info-box2"
+        "info-box3 info-box4";
+}
+
+.info-grid-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding-left:4rem;
+    padding-right:4rem;
+    gap:1rem;
+}
+
+#info-box1{
+    border-right:none;
+    border-bottom:none;
+    background-image: url("/img/beachside.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: -20px -20px 30px rgba(0, 0, 0, 0.1);
+}
+
+#box1-h{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color:#DFA974;
+}
+#info-box3{
+    gap:1rem;
+    padding:1.5rem;
+}
+#box1-p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+
+}
+#box1-h2{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+}
+#box1-p2{
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+}
+
+
+#info-box4{
+    border-top:none;
+    border-left:none;
+}
+
+.info-grid-box{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.box3-grid{
+    display: grid;
+    margin:0;
+    gap:1rem;
+    grid-template-columns: 16rem 20rem;
+    grid-template-rows: 10rem 10rem;
+    grid-template-areas:
+    "box1 box2"
+    "box3 box4"
+    ;
+}
+.infob3-box{
+    display: flex;
+    flex-direction: column
+
+}
+#ib3-box1{
+    background-image: url("/img/beachside.jpg");
+    background-size: cover;
+}
+#ib3-box3{
+    background-image: url("/img/beachside.jpg");
+    background-size: cover;
+}
+
+#latest{
+    font-family: "DM Serif Text", serif;
+    font-weight: 200;
+    font-size: 2rem;
+    color:#7f5539;
+
+}
+
+.box-3-mini{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 250;
+}
+
+.box-3-main{
+    font-family: "DM Serif Text", serif;
+    letter-spacing:2px ;
+}
+
+.box-3-p{
+    font-family: "Roboto", sans-serif;
+    font-weight:200;
+    font-size: 0.9rem;
+}
+
+
+#info-box4{
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding-top:2.2rem;
+    text-align: left;
+    background-color: #774936;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+
+}
+
+.box-4-review{
+    height: auto;
+    width: auto;
+    display: flex;
+    gap:2rem;
+    padding:1rem;
+    justify-content: center;
+    align-content: center;
+
+}
+#box4-hr{
+    height: 1rem;
+    color:white;
+}
+
+.p-container{
+    display: flex;
+    width: 20rem;
+    text-align: left;
+    height:auto;
+
+}
+#customer-p{
+    color:white;
+    font-family: "DM Serif Text", serif;
+    font-size: 1.7rem;
+
+}
+.box-4-review i{
+    color:white;
+    font-size: 2rem;
+ }
+
+.box-4-review p{
+  text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 150;
+    color:white;
+}
+.box-4-review img {
+     width: 6rem;
+     height: 7rem;
+     border-radius: 50%;
+ }
+
+/* END MAIN IMAGE 2   */
+
+
+/* Events Venue Start */
+
+.events-venue-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    gap: 1rem;
+}
+.events-venue-header  h1{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.7rem;
+}
+
+hr {
+    flex: 1;
+    height: 1px;
+    border: none;
+    margin: 0;
+    max-width: 20rem;
+}
+
+#hr-left {
+    background-image: linear-gradient(to left, #ced4da, rgba(206, 212, 218, 0));
+}
+
+#hr-right {
+    background-image: linear-gradient(to right, #ced4da, rgba(206, 212, 218, 0));
+}
+
+h1 {
+    margin: 0;
+    padding: 0 1rem;
+    white-space: nowrap;
+}
+
+
+/* Events Venue END */
+
+
+
+/* START MAIN IMAGE 3  */
+
+.events-venue{
+    display: flex;
+    width: 100vw;
+    height: auto;
+    padding:4rem;
+    justify-content: center;
+}
+.events-boxes {
+    display: flex;
+    flex-direction: column;
+    height:auto;
+    gap:9rem;
+}
+.event-box{
+    display: flex;
+    width:60rem;
+    height:auto;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
+
+.price{
+    display: flex;
+    gap:1rem;
+    width: auto;
+    height: auto;
+    text-align: left;
+    align-items: center;
+}
+.price p{
+    margin:0;
+}
+.starts-at{
+    font-family: "Roboto", sans-serif;
+    font-weight: 200 ;
+}
+.price-number{
+    font-family: 'Sona', 'Garamond Premier Pro', 'EB Garamond', 'Garamond', 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    color:#DFA974;
+    font-size: 2.5rem;
+}
+
+.details{
+    display: flex;
+    width:28rem;
+    flex-direction: column;
+    background-color: #fbfbf2;
+    text-align: left;
+    gap:1rem;
+    padding:1rem;
+    height:auto;
+}
+.details-table{
+    border-bottom: 1px solid #ced4da;
+}
+.details-table td,
+.details-table th {
+    padding: 9px; /* Adjust this value as needed */
+}
+
+.info {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+.detail{
+    font-family: "Roboto", sans-serif;
+    font-weight: 250;
+}
+.venue-header{
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+}
+
+.details p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 180;
+}
+
+.details-table{
+    padding:10px;
+}
+
+.right{
+   display: flex;
+    flex-direction: column;
+    gap:2rem;
+}
+
+.right img{
+   width:38rem ;
+    height:33rem ;
+    border-radius: 0 6rem 0 0;
+}
+
+.event-button{
+    position: relative;
+    left:2rem;
+    width:10rem;
+    height: 2rem;
+    background-color: #7f5539;
+    color:white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    border:none;
+}
+
+.event-button:hover{
+   background-color:#5f3f27;
+    color:white;
+    transition: all 0.4s
+}
+
+
+/* END  MAIN IMAGE 3  */
+
+
+
+
+
+/* FOOTER START */
+.footer{
+    display:flex;
+    width:100%;
+    height:26rem;
+    flex-direction: column;
+}
+.footer-texts{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: grid;
+    width:100vw;
+    height:75%;
+    background-color:#151d2f;
+    grid-template-columns:auto;
+    grid-template-rows:auto;
+    grid-template-areas:
+    "ftbox1 ftbox2 ftbox3";
+    padding:2rem;
+    gap:7rem;
+}
+.footer-text-box{
+    width:auto;
+    display: flex;
+    flex-direction: column;
+    padding-left:3rem;
+    padding-right:3rem;
+}
+#footer-h2{
+    font-family: 'Sona', 'Garamond Premier Pro', 'EB Garamond', 'Garamond', 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    font-size: 3rem;
+}
+
+#ftb1{
+    width:auto;
+    height:auto;
+    color:#acb0bd;
+
+}
+#ftb2{
+    width:auto;
+    height:auto;
+    color:#acb0bd;
+}
+#ftb3{
+    width:auto;
+    height:auto;
+    color:#acb0bd;
+}
+.footer-icons{
+    display: flex;
+    gap:1rem;
+}
+.footer-icon-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width:auto;
+    height:auto;
+    border-radius: 50%;
+    border: 1px solid #495057;
+    padding:14px;
+}
+.footer-icon-circle i{
+    color:white;
+    font-size:12px;
+}
+.footer-icon-circle:hover{
+    background-color:#DFA974;
+    transition: all 0.4s;
+}
+.lower-footer{
+    width:100vw;
+    height:25%;
+    display:flex;
+    color:#acb0bd;
+    justify-content: center;
+    align-items: center;
+    background-color:#051923  ;
+}
+#contact-us{
+    color:#DFA974;
+    font-weight: 450;
+    letter-spacing: 2px;
+    font-size:1rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+@media (max-width: 50rem) {
+    .news-section{
+    }
+}
+@media screen and (max-width: 1200px) {
+    .footer-texts{
+        gap:3rem;
+    }
+}
+@media screen and (max-width:50rem) {
+    .footer{
+        height:auto;
+    }
+    .footer-texts{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .lower-footer{
+        height:auto;
+        padding:2rem;
+    }
+    .footer-text-box{
+        width:auto;
+        height: auto;
+    }
+}
+
+
+
+

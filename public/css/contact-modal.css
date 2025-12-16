@@ -1,0 +1,73 @@
+.booking-confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+}
+.booking-confirmation-modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+.confirmation-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    animation: fadeIn 0.5s;
+}
+.error-content .error-icon {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #F44336;
+}
+.confirmation-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+}
+.success-icon {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+.confirmation-content h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+.confirmation-content p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.close-modal-btn {
+    background-color: #DFA974;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.close-modal-btn:hover {
+    background-color: #c9915c;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

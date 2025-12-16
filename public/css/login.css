@@ -1,0 +1,207 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.box-side {
+    position: absolute;
+    top: -14rem;
+    left: -20rem;
+    width: 50rem;
+    height: 65rem;
+    background:linear-gradient(to right ,#582f0e , #e6ccb2);
+    transform: rotate(20deg);
+    z-index: -1;
+}
+
+.form-container {
+    display: flex;
+    width: auto;
+    height: 38rem;
+
+}
+
+
+
+
+#form-image-box {
+    width: 31rem;
+    height: 38rem;
+    display: flex;
+    background-image: url("/img/hotelseaside.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10rem 0 0 0;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.15);
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#form-image-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10rem 0 0 0;
+}
+
+#arbitel {
+    font-family: 'Sona', 'Garamond Premier Pro', 'EB Garamond', 'Garamond', 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    font-size: 5rem;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+#est-p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+#est {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    color: #DFA974;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+
+.login-form{
+    display: flex;
+    width: 30rem;
+    height: 38rem;
+    border:1px solid #ced4da;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap:2rem;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.15);
+
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.form-group p{
+    left:1.6rem;
+    position: relative;
+    text-align: right;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: 0.7rem;
+}
+#create-acc{
+    color:#DFA974;
+}
+#create-acc:hover{
+    transition: all 0.4s;
+    cursor: pointer;
+    color:blue;
+}
+#sona-form{
+    font-size: 3rem;
+    border-bottom: 2px solid #DFA974;
+}
+#input-name{
+    width: 19rem;
+    padding:3px;
+    height: 2rem;
+    border: 2px solid #ced4da;
+    border-radius: 10px;
+}
+#input-pass{
+    width: 19rem;
+    padding:3px;
+    height: 2rem;
+    border: 2px solid #ced4da;
+    border-radius: 10px;
+}
+.login-form button{
+    width: 10rem;
+    padding:3px;
+    height: 2rem;
+    border: 2px solid #ced4da;
+    border-radius: 10px;
+    background-color: #DFA974;
+    color:white;
+}
+.login-form button:hover{
+    background-color: white;
+    border: 2px solid #ced4da;
+    color:#DFA974;
+    transition: all 0.5s;
+}
+
+
+@media  (max-width:1000px ){
+        .login-form{
+            background-color: white;
+        }
+        #form-image-box{
+            width: 24rem;
+        }
+        .login-form{
+            width:25rem;
+        }
+}
+@media  (max-width:900px ){
+    .login-form{
+
+    }
+    . #form-image-box{
+        width: 21rem;
+    }
+    .login-form{
+        width:23rem;
+    }
+}
+@media  (max-width:800px ){
+    body{
+        padding:2rem;
+
+    }
+    #form-image-box{
+        height: 20rem;
+        width:30rem;
+    }
+    .form-container{
+        height: auto;
+        width: auto;
+        flex-direction: column;
+    }
+    .login-form{
+        width: 30rem;
+        height: 20rem;
+    }
+
+
+}
+
+

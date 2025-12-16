@@ -1,0 +1,260 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.box-side {
+
+    position: absolute;
+    top: -14rem;
+    left: -20rem;
+    width: 50rem;
+    height: 100rem;
+    background:linear-gradient(to right ,#582f0e , #e6ccb2);
+    transform: rotate(20deg);
+    z-index: -1;
+}
+
+/* Form Container Start */
+
+.form-container {
+    display: flex;
+    width: 60rem;
+    height: 35rem;
+    position: relative;
+    z-index: 1;
+}
+
+.create-account-form p{
+    position: relative;
+    text-align: right;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: 0.7rem;
+}
+#create-acc{
+    color:#DFA974;
+}
+#create-acc-text1{
+    font-family: 'Sona', 'Garamond Premier Pro', 'EB Garamond', 'Garamond', 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    font-size: 2.7rem;
+    color: black;
+    position: relative;
+    top:-1rem;
+    border-bottom: 2px solid #DFA974;
+
+}
+
+#create-acc:hover{
+    transition: all 0.4s;
+    cursor: pointer;
+    color:blue;
+}
+#sona-form{
+    font-size: 3rem;
+    border-bottom: 2px solid #DFA974;
+}
+
+.inputs-field{
+
+    width: 19rem;
+    padding:4px;
+    height: 2rem;
+    border: 2px solid #ced4da;
+    border-radius: 10px;
+}
+.create-account-form button{
+    width: 10rem;
+    padding:3px;
+    height: 2rem;
+    border: 2px solid #ced4da;
+    border-radius: 10px;
+    background-color: #DFA974;
+    color:white;
+}
+.create-account-form button:hover{
+    background-color: white;
+    border: 2px solid #ced4da;
+    color:#DFA974;
+    transition: all 0.5s;
+}
+.create-account-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    width:35rem;
+    height:34.8rem;
+    border:2px solid #ced4da;
+    background-color: white;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.15);
+}
+
+/*  End of Form Container  */
+
+/* FORM IMAGE START  */
+
+
+.form-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 26rem;
+    height: 35rem;
+    border-radius: 0 8rem 0 0;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/img/hotelseaside.jpg");
+    background-position: center;
+    background-size: cover;
+    filter: brightness(70%);
+    z-index: -1; /* Place behind the content */
+}
+
+
+
+#arbitel {
+    color: white;
+    font-size: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+#fi-acc {
+    color: #DFA974;
+    border-bottom: 2px solid white;
+    position: relative;
+    z-index: 1;
+}
+
+.form-image-list {
+    position: relative;
+    top: 3rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    z-index: 1; /* Ensure content stays above darkened background */
+    padding-left: 15px; /* Add space for the circular indicators */
+}
+
+.form-image-list p {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    color: white;
+    position: relative;
+    padding-left: 25px;
+}
+
+.form-image-list p::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #DFA974;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#fi-acc{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1200px){
+    body{
+        padding:1rem;
+    }
+    .create-account-form{
+
+        width:30rem;
+        height:34.8rem;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    body{
+        overflow-x:hidden;
+        overflow-y: visible;
+    }
+    .form-container{
+        width: auto;
+        height: auto;
+        margin: 0;
+        flex-direction: column;
+    }
+    .create-account-form{
+        width:30rem;
+        height:30rem;
+        margin: 0;
+    }
+    .form-image{
+        margin: 0;
+        width: 30rem;
+        height: 30rem;
+        border-radius: 0 0 8rem 0;
+    }
+    .box-side{
+        height: 75rem;
+    }
+}
+
+@media screen and (max-width: 550px){
+    body{
+        overflow-x:hidden;
+        overflow-y: visible;
+    }
+    .form-container{
+        width: auto;
+        height: auto;
+        margin: 0;
+        flex-direction: column;
+
+    }
+    .create-account-form{
+        width:28rem;
+        height:30rem;
+        margin: 0;
+
+    }
+    .form-image{
+        margin: 0;
+        width: 28rem;
+        height: 30rem;
+        border-radius: 0 0 8rem 0;
+    }
+    .box-side{
+        height: 75rem;
+    }
+}
+
+
+
+/* END OF FORM IMAGE */
+

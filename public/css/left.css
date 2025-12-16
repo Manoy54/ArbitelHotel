@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    background-color: white;
+    display: flex;
+    min-height: 100vh;
+    border-left: 2px solid #ced4da;
+}
+
+.left-sidebar {
+    width: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    color: white;
+}
+
+.profile-pic {
+    width: 220px;
+    height: 220px;
+    border-radius: 120px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 14px;
+    border: 2px solid var(--border);
+    margin-bottom: 30px;
+    overflow: hidden;
+    position: relative;
+    background-image: url("img/user-icon.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.profile-pic:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.profile-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.profile-actions button {
+    background-color: white;
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 100;
+    display: flex;
+    text-align: left;
+    padding: 10px;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+    border: none;
+}
+.logout-btn:hover{
+    background-color: #ced4da;
+    color: black;
+    cursor: pointer;
+    border-color: black;
+    transition: all 0.2s ease-in-out;
+}
+
+.profile-actions .nav-btn:hover {
+    background-color: #ced4da;
+    color: black;
+    cursor: pointer;
+    border-color: black;
+    transition: all 0.2s ease-in-out;
+}
+
+/* color active */
+.profile-actions .nav-btn.active {
+    background-color:#5a3921;
+    color: white;
+}
+
+.logout-btn {
+    margin-top: 20px;
+}

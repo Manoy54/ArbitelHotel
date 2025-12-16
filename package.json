@@ -1,0 +1,11 @@
+{
+  "name": "hotel-project",
+  "version": "1.0.0",
+  "description": "PHP project deployed on Vercel.",
+  "scripts": {
+    "start": "echo 'Starting deployment...'"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.87.3"
+  }
+}
